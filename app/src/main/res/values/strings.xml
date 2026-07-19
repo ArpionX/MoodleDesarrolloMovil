@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Proyecto Desarrollo Movil</string>
+    <string name="login_welcome_title">Bienvenido</string>
+    <string name="login_google_button">Iniciar sesión con Google</string>
+    <string name="login_error_mismatch">Esta cuenta de Google no corresponde al usuario autorizado en Moodle</string>
+    <string name="login_error_generic">No se pudo iniciar sesión: %1$s</string>
+</resources>
