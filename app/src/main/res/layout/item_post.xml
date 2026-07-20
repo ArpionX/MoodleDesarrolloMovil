@@ -1,38 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card_white"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/postSubjectTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/postAuthorInitialTextView"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_circle_teal"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="M" />
 
     <TextView
         android:id="@+id/postAuthorTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/postAuthorInitialTextView"
+        app:layout_constraintTop_toTopOf="@id/postAuthorInitialTextView"
+        tools:text="Marcus Holloway" />
+
+    <TextView
+        android:id="@+id/postSubjectTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="2dp"
+        android:textColor="@color/text_secondary"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/postSubjectTextView" />
+        app:layout_constraintStart_toEndOf="@id/postAuthorInitialTextView"
+        app:layout_constraintTop_toBottomOf="@id/postAuthorTextView"
+        tools:text="Re: Advanced UI Design" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/postHeaderBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="postAuthorInitialTextView,postSubjectTextView" />
 
     <TextView
         android:id="@+id/postMessageTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/text_primary"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/postAuthorTextView" />
+        app:layout_constraintTop_toBottomOf="@id/postHeaderBarrier"
+        tools:text="What are the best practices for ensuring keyboard accessibility in nested comment structures?" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

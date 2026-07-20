@@ -50,6 +50,8 @@ class ForumPostsActivity : AppCompatActivity() {
         postsRecyclerView.layoutManager = LinearLayoutManager(this)
         postsRecyclerView.adapter = adapter
 
+        findViewById<View>(R.id.backButton).setOnClickListener { finish() }
+
         replyButton.setOnClickListener {
             viewModel.replyToDiscussion(
                 subject = replySubjectEditText.text.toString(),

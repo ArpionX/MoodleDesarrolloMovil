@@ -14,9 +14,12 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import ec.edu.ug.proyectodesarrollomovil.R
 import ec.edu.ug.proyectodesarrollomovil.data.remote.dto.ModuleDto
 import ec.edu.ug.proyectodesarrollomovil.ui.assignment.AssignmentDetailActivity
+import ec.edu.ug.proyectodesarrollomovil.ui.common.BottomNavTab
+import ec.edu.ug.proyectodesarrollomovil.ui.common.setupBottomNav
 import ec.edu.ug.proyectodesarrollomovil.ui.forum.ForumDiscussionsActivity
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -44,6 +47,9 @@ class CourseDetailActivity : AppCompatActivity() {
 
         modulesRecyclerView.layoutManager = LinearLayoutManager(this)
         modulesRecyclerView.adapter = adapter
+
+        findViewById<View>(R.id.backButton).setOnClickListener { finish() }
+        setupBottomNav(findViewById<BottomNavigationView>(R.id.bottomNavigationView), BottomNavTab.COURSES)
 
         lifecycleScope.launch {
             viewModel.uiState

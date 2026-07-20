@@ -33,10 +33,12 @@ class DiscussionAdapter(
     override fun getItemCount(): Int = discussions.size
 
     class DiscussionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val authorInitialTextView: TextView = itemView.findViewById(R.id.authorInitialTextView)
         private val subjectTextView: TextView = itemView.findViewById(R.id.discussionSubjectTextView)
         private val authorTextView: TextView = itemView.findViewById(R.id.discussionAuthorTextView)
 
         fun bind(discussion: ForumDiscussionDto, onDiscussionClick: (ForumDiscussionDto) -> Unit) {
+            authorInitialTextView.text = discussion.userFullname.trim().firstOrNull()?.uppercase() ?: "?"
             subjectTextView.text = discussion.subject
             authorTextView.text = discussion.userFullname
             itemView.setOnClickListener { onDiscussionClick(discussion) }

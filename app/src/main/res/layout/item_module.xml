@@ -1,50 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card_white"
     android:clickable="true"
     android:focusable="true"
-    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
     android:padding="16dp">
+
+    <View
+        android:id="@+id/moduleIconBackground"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_circle_teal_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/moduleIconImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_assignment"
+        app:layout_constraintBottom_toBottomOf="@id/moduleIconBackground"
+        app:layout_constraintEnd_toEndOf="@id/moduleIconBackground"
+        app:layout_constraintStart_toStartOf="@id/moduleIconBackground"
+        app:layout_constraintTop_toTopOf="@id/moduleIconBackground"
+        app:tint="@color/teal_primary" />
 
     <TextView
         android:id="@+id/moduleTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/teal_primary"
+        android:textSize="11sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:letterSpacing="0.05"
+        app:layout_constraintStart_toEndOf="@id/moduleIconBackground"
+        app:layout_constraintTop_toTopOf="@id/moduleIconBackground"
+        tools:text="ASSIGN" />
 
     <TextView
         android:id="@+id/moduleNameTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_primary"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/moduleTypeTextView" />
+        app:layout_constraintStart_toStartOf="@id/moduleTypeTextView"
+        app:layout_constraintTop_toBottomOf="@id/moduleTypeTextView"
+        tools:text="User Experience Case Study" />
 
     <TextView
         android:id="@+id/moduleSectionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:textColor="@color/text_secondary"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/moduleNameTextView" />
+        app:layout_constraintStart_toStartOf="@id/moduleTypeTextView"
+        app:layout_constraintTop_toBottomOf="@id/moduleNameTextView"
+        tools:text="Módulo 4: Advanced Interaction Design" />
+
+    <ImageView
+        android:id="@+id/dueDateIconImageView"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintStart_toStartOf="@id/moduleTypeTextView"
+        app:layout_constraintTop_toBottomOf="@id/moduleSectionTextView"
+        app:tint="@color/text_hint" />
 
     <TextView
         android:id="@+id/moduleDueDateTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/text_hint"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/dueDateIconImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/moduleSectionTextView" />
+        app:layout_constraintStart_toEndOf="@id/dueDateIconImageView"
+        app:layout_constraintTop_toTopOf="@id/dueDateIconImageView"
+        tools:text="Fecha límite: 24/10/2025 23:59" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

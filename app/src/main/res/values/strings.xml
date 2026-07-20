@@ -4,4 +4,26 @@
     <string name="login_google_button">Iniciar sesión con Google</string>
     <string name="login_error_mismatch">Esta cuenta de Google no corresponde al usuario autorizado en Moodle</string>
     <string name="login_error_generic">No se pudo iniciar sesión: %1$s</string>
+    <string name="login_subtitle">Ingresá con tu cuenta de Google para acceder a tu panel académico.</string>
+    <string name="app_display_name">LMS Academy</string>
+
+    <string name="courses_title">Mis Cursos</string>
+    <string name="courses_subtitle">Continuá donde lo dejaste y alcanzá tus metas.</string>
+
+    <string name="course_detail_title">Módulos del curso</string>
+
+    <string name="forum_discussions_title">Discusiones</string>
+
+    <string name="forum_posts_title">Hilo de discusión</string>
+    <string name="forum_reply_subject_hint">Asunto</string>
+    <string name="forum_reply_message_hint">Escribí tu mensaje…</string>
+    <string name="forum_reply_button">Publicar</string>
+
+    <string name="assignment_eyebrow_label">TAREA</string>
+    <string name="assignment_submission_label">Tu entrega</string>
+    <string name="assignment_submission_hint">Escribí tu entrega acá…</string>
+    <string name="assignment_submit_button">Enviar entrega</string>
+
+    <string name="nav_courses">Cursos</string>
+    <string name="nav_discussions">Foro</string>
 </resources>

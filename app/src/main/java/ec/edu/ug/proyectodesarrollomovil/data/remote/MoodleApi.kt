@@ -59,7 +59,7 @@ interface MoodleApi {
     suspend fun getForumDiscussionPosts(
         @Query("wstoken") wstoken: String,
         @Query("discussionid") discussionId: Int,
-        @Query("wsfunction") wsFunction: String = "mod_forum_get_forum_discussion_posts",
+        @Query("wsfunction") wsFunction: String = "mod_forum_get_discussion_posts",
         @Query("moodlewsrestformat") format: String = "json"
     ): ResponseBody
 
@@ -94,6 +94,7 @@ interface MoodleApi {
         @Field("assignmentid") assignmentId: Int,
         @Field("plugindata[onlinetext_editor][text]") text: String,
         @Field("plugindata[onlinetext_editor][format]") format: Int = 1,
+        @Field("plugindata[onlinetext_editor][itemid]") itemId: Int = 0,
         @Field("wsfunction") wsFunction: String = "mod_assign_save_submission",
         @Field("moodlewsrestformat") restFormat: String = "json"
     ): ResponseBody

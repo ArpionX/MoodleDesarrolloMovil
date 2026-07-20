@@ -33,6 +33,7 @@ class AssignmentDetailActivity : AppCompatActivity() {
     private lateinit var errorTextView: TextView
     private lateinit var contentScrollView: ScrollView
     private lateinit var assignmentNameTextView: TextView
+    private lateinit var deadlineCard: View
     private lateinit var assignmentDueDateTextView: TextView
     private lateinit var assignmentIntroTextView: TextView
     private lateinit var submissionTextEditText: EditText
@@ -48,10 +49,13 @@ class AssignmentDetailActivity : AppCompatActivity() {
         errorTextView = findViewById(R.id.errorTextView)
         contentScrollView = findViewById(R.id.contentScrollView)
         assignmentNameTextView = findViewById(R.id.assignmentNameTextView)
+        deadlineCard = findViewById(R.id.deadlineCard)
         assignmentDueDateTextView = findViewById(R.id.assignmentDueDateTextView)
         assignmentIntroTextView = findViewById(R.id.assignmentIntroTextView)
         submissionTextEditText = findViewById(R.id.submissionTextEditText)
         submitButton = findViewById(R.id.submitButton)
+
+        findViewById<View>(R.id.backButton).setOnClickListener { finish() }
 
         submitButton.setOnClickListener {
             viewModel.submitText(submissionTextEditText.text.toString())
@@ -87,9 +91,13 @@ class AssignmentDetailActivity : AppCompatActivity() {
                 errorTextView.visibility = View.GONE
                 contentScrollView.visibility = View.VISIBLE
                 assignmentNameTextView.text = state.assignment.name
-                assignmentDueDateTextView.text = state.assignment.dueDate?.let {
-                    "Fecha límite: ${dateFormat.format(Date(it * 1000))}"
-                } ?: ""
+                val dueDate = state.assignment.dueDate
+                if (dueDate != null) {
+                    deadlineCard.visibility = View.VISIBLE
+                    assignmentDueDateTextView.text = "Fecha límite: ${dateFormat.format(Date(dueDate * 1000))}"
+                } else {
+                    deadlineCard.visibility = View.GONE
+                }
                 assignmentIntroTextView.text = state.assignment.intro
             }
             is AssignmentDetailUiState.Failed -> {

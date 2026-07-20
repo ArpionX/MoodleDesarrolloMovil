@@ -31,11 +31,13 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
     override fun getItemCount(): Int = posts.size
 
     class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val authorInitialTextView: TextView = itemView.findViewById(R.id.postAuthorInitialTextView)
         private val subjectTextView: TextView = itemView.findViewById(R.id.postSubjectTextView)
         private val authorTextView: TextView = itemView.findViewById(R.id.postAuthorTextView)
         private val messageTextView: TextView = itemView.findViewById(R.id.postMessageTextView)
 
         fun bind(post: ForumPostDto) {
+            authorInitialTextView.text = post.userFullname.trim().firstOrNull()?.uppercase() ?: "?"
             subjectTextView.text = post.subject
             authorTextView.text = post.userFullname
             messageTextView.text = post.message

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_courses"
+        android:icon="@drawable/ic_school"
+        android:title="@string/nav_courses" />
+    <item
+        android:id="@+id/nav_discussions"
+        android:icon="@drawable/ic_forum"
+        android:title="@string/nav_discussions" />
+</menu>

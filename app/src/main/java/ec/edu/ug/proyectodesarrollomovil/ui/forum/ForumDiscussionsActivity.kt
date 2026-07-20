@@ -14,7 +14,10 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import ec.edu.ug.proyectodesarrollomovil.R
+import ec.edu.ug.proyectodesarrollomovil.ui.common.BottomNavTab
+import ec.edu.ug.proyectodesarrollomovil.ui.common.setupBottomNav
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -42,6 +45,9 @@ class ForumDiscussionsActivity : AppCompatActivity() {
 
         discussionsRecyclerView.layoutManager = LinearLayoutManager(this)
         discussionsRecyclerView.adapter = adapter
+
+        findViewById<View>(R.id.backButton).setOnClickListener { finish() }
+        setupBottomNav(findViewById<BottomNavigationView>(R.id.bottomNavigationView), BottomNavTab.DISCUSSIONS)
 
         lifecycleScope.launch {
             viewModel.uiState

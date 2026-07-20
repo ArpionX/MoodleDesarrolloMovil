@@ -2,4 +2,32 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Brand -->
+    <color name="teal_primary">#0E6B5C</color>
+    <color name="teal_primary_dark">#08483D</color>
+    <color name="teal_primary_light">#D6F5EF</color>
+    <color name="navy_dark">#0B1220</color>
+    <color name="navy_dark_variant">#141B2C</color>
+
+    <!-- Surfaces -->
+    <color name="background">#F4F6FB</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_variant">#EEF1F8</color>
+    <color name="border_light">#E2E5EC</color>
+
+    <!-- Text -->
+    <color name="text_primary">#14181F</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+    <color name="text_on_dark">#FFFFFF</color>
+    <color name="text_on_dark_secondary">#B7C0D4</color>
+
+    <!-- Status / accents -->
+    <color name="error_red">#D64545</color>
+    <color name="badge_orange_bg">#FCE8D6</color>
+    <color name="badge_orange_text">#C2691A</color>
+    <color name="accent_mint">#6EE7C8</color>
+    <color name="lock_gray_bg">#E5E7EB</color>
+    <color name="lock_gray_icon">#9CA3AF</color>
 </resources>

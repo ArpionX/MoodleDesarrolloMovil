@@ -1,41 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/bg_card_white"
     android:clickable="true"
     android:focusable="true"
-    android:background="?attr/selectableItemBackground"
-    android:padding="16dp">
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="18dp">
+
+    <View
+        android:id="@+id/courseIconBackground"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle_teal_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_school"
+        app:layout_constraintBottom_toBottomOf="@id/courseIconBackground"
+        app:layout_constraintEnd_toEndOf="@id/courseIconBackground"
+        app:layout_constraintStart_toStartOf="@id/courseIconBackground"
+        app:layout_constraintTop_toTopOf="@id/courseIconBackground"
+        app:tint="@color/teal_primary" />
+
+    <ImageView
+        android:id="@+id/chevronImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_chevron_right"
+        app:layout_constraintBottom_toBottomOf="@id/courseIconBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/courseIconBackground"
+        app:tint="@color/text_hint" />
 
     <TextView
         android:id="@+id/courseFullNameTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/text_primary"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/courseIconBackground"
+        tools:text="Introducción al Diseño UI" />
 
     <TextView
         android:id="@+id/courseShortNameTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:textColor="@color/text_secondary"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/courseFullNameTextView" />
+        app:layout_constraintTop_toBottomOf="@id/courseFullNameTextView"
+        tools:text="UI-101" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/border_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/courseShortNameTextView" />
+
+    <ImageView
+        android:id="@+id/teacherIconImageView"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:tint="@color/text_secondary" />
 
     <TextView
         android:id="@+id/courseTeacherTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text_secondary"
         android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/teacherIconImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/courseShortNameTextView" />
+        app:layout_constraintStart_toEndOf="@id/teacherIconImageView"
+        app:layout_constraintTop_toTopOf="@id/teacherIconImageView"
+        tools:text="Alex Rivera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
